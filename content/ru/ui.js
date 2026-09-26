@@ -15,7 +15,6 @@ export const ui = {
     openMenu: "Открыть меню",
     closeMenu: "Закрыть меню",
     toggleTheme: "Переключить тёмную тему",
-    todo: "будет добавлено",
     languages: "Языки",
   },
   home: {

@@ -1,5 +1,5 @@
 // Timeline entries. `TODO` marks data Alexey still has to provide (see CONTENT_TODO.md);
-// the UI renders it as a visible placeholder instead of inventing a value.
+// such fields are hidden in the UI instead of being filled with a guess.
 
 import { TODO } from "../shared";
 
@@ -35,11 +35,11 @@ export const experience = [
     projectSlug: "healthy",
   },
   {
-    id: "earlier",
-    role: TODO,
-    organization: TODO,
+    id: "msm",
+    role: "Website development & support",
+    organization: "MSM — double degree programme",
     period: TODO,
-    focus: ["Web products", "Full-stack development"],
-    summary: TODO,
+    focus: ["Support", "Redesign", "Email automation"],
+    summary: "Maintenance and redesign of the programme website, automated email sending and other development work.",
   },
 ];

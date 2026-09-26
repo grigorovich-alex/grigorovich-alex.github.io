@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/metadata";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { PillList } from "@/components/ui/Pill";
-import { Todo, isTodo } from "@/components/ui/Todo";
+import { isTodo } from "@/components/ui/Todo";
 
 export function experienceMetadata(locale) {
   const t = getContent(locale).ui.experiencePage;
@@ -15,7 +15,6 @@ export function experienceMetadata(locale) {
 export function ExperienceView({ locale }) {
   const { experience, ui } = getContent(locale);
   const t = ui.experiencePage;
-  const todo = ui.common.todo;
   return (
     <>
       <PageHeader eyebrow={t.eyebrow} title={t.title} description={t.description} />
@@ -24,15 +23,9 @@ export function ExperienceView({ locale }) {
           {experience.map((e) => (
             <li key={e.id} className="reveal relative pb-12 pl-8 last:pb-0">
               <span aria-hidden="true" className="absolute -left-[5px] top-2 size-2.5 rounded-full border-2 border-bg bg-accent" />
-              <p className="font-mono text-xs text-subtle">
-                <Todo value={e.period} label={todo} />
-              </p>
-              <h2 className="mt-2 text-lg font-semibold tracking-tight">
-                <Todo value={e.role} label={todo} />
-              </h2>
-              <p className="mt-0.5 text-muted">
-                <Todo value={e.organization} label={todo} />
-              </p>
+              {!isTodo(e.period) && <p className="mb-2 font-mono text-xs text-subtle">{e.period}</p>}
+              <h2 className="text-lg font-semibold tracking-tight">{e.role}</h2>
+              <p className="mt-0.5 text-muted">{e.organization}</p>
               {!isTodo(e.summary) && <p className="mt-3 leading-7">{e.summary}</p>}
               <div className="mt-4">
                 <PillList items={e.focus} label={t.focus} />

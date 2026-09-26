@@ -14,7 +14,8 @@ Everything the site does **not** claim yet because the fact hasn't been confirme
 ## Experience (`content/<locale>/experience.js`)
 
 - [x] Marketplace project: dates — Jul 2025 — May 2026 (from your commits in the project's git history)
-- [ ] Earlier roles: companies, dates, exact titles
+- [ ] MSM double degree programme: dates (period is hidden until filled)
+- [ ] Other earlier roles, if any
 - [ ] Responsibilities and achievements per role
 - [ ] Team sizes (confirmed so far: marketplace — 5 contributors in git history)
 - [ ] Measurable results (only numbers you can back up)

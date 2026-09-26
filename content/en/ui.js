@@ -15,7 +15,6 @@ export const ui = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     toggleTheme: "Toggle dark mode",
-    todo: "to be added",
     languages: "Languages",
   },
   home: {

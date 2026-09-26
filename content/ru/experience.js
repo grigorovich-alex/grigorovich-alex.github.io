@@ -1,6 +1,6 @@
 import { TODO } from "../shared";
 
-// TODO — данные, которые Алексей ещё не передал (см. CONTENT_TODO.md).
+// TODO — данные, которые Алексей ещё не передал (см. CONTENT_TODO.md); на сайте такие поля скрыты.
 
 export const experience = [
   {
@@ -34,11 +34,11 @@ export const experience = [
     projectSlug: "healthy",
   },
   {
-    id: "earlier",
-    role: TODO,
-    organization: TODO,
+    id: "msm",
+    role: "Разработка и поддержка сайта",
+    organization: "MSM — программа двойного диплома",
     period: TODO,
-    focus: ["Веб-продукты", "Full-stack разработка"],
-    summary: TODO,
+    focus: ["Поддержка", "Редизайн", "Автоматизация email"],
+    summary: "Поддержка и редизайн сайта программы, автоматизация отправки email и другие задачи разработки.",
   },
 ];
