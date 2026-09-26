@@ -13,8 +13,8 @@ Everything the site does **not** claim yet because the fact hasn't been confirme
 
 ## Experience (`content/<locale>/experience.js`)
 
-- [x] Marketplace project: dates — Jul 2025 — May 2026 (from your commits in the project's git history)
-- [ ] MSM double degree programme: dates (period is hidden until filled)
+- [x] Dates: MSM from 2020, marketplace 2022 — May 2026, Diamitry 2025 — present (confirmed by Alexey)
+- [ ] MSM double degree programme: end year (currently shown as “2020”)
 - [ ] Other earlier roles, if any
 - [ ] Responsibilities and achievements per role
 - [ ] Team sizes (confirmed so far: marketplace — 5 contributors in git history)
