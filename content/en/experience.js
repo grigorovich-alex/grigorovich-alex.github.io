@@ -18,7 +18,7 @@ export const experience = [
     id: "marketplace",
     role: "Lead Developer",
     organization: "Classifieds marketplace (client, Czech Republic)",
-    period: TODO,
+    period: "Jul 2025 — May 2026",
     focus: ["Technical leadership", "SEO architecture", "Payload CMS", "Team of 5"],
     summary:
       "Led development of a three-language directory marketplace with SEO landing pages, advertiser dashboard and phone authentication.",

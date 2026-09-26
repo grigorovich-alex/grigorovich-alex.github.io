@@ -13,7 +13,7 @@ Everything the site does **not** claim yet because the fact hasn't been confirme
 
 ## Experience (`content/<locale>/experience.js`)
 
-- [ ] Marketplace project: dates
+- [x] Marketplace project: dates — Jul 2025 — May 2026 (from your commits in the project's git history)
 - [ ] Earlier roles: companies, dates, exact titles
 - [ ] Responsibilities and achievements per role
 - [ ] Team sizes (confirmed so far: marketplace — 5 contributors in git history)
@@ -28,7 +28,7 @@ Everything the site does **not** claim yet because the fact hasn't been confirme
 
 ### Marketplace
 - [ ] Confirm the anonymised description is acceptable to the client
-- [ ] Production status and period
+- [ ] Production status
 - [ ] Your concrete areas of ownership inside the team
 
 ### VR rehabilitation platform
