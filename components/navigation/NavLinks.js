@@ -2,18 +2,17 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { navigation } from "@/content/site";
 
 export function isActive(pathname, href) {
   const normalized = pathname.endsWith("/") ? pathname : `${pathname}/`;
   return normalized.startsWith(href);
 }
 
-export function NavLinks() {
+export function NavLinks({ items }) {
   const pathname = usePathname();
   return (
     <ul className="flex items-center gap-1">
-      {navigation.map((item) => {
+      {items.map((item) => {
         const active = isActive(pathname, item.href);
         return (
           <li key={item.href}>

@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Pill } from "@/components/ui/Pill";
+import { getContent } from "@/content";
+import { localePath } from "@/lib/i18n";
 
-export function ProjectCard({ project, headingLevel = "h3" }) {
+export function ProjectCard({ project, locale, headingLevel = "h3" }) {
   const Heading = headingLevel;
+  const { ui } = getContent(locale);
   return (
     <article className="group relative flex h-full flex-col rounded-2xl border border-border bg-surface p-6 transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-border-strong">
       <div className="mb-4 flex flex-wrap items-center gap-2">
@@ -11,7 +14,7 @@ export function ProjectCard({ project, headingLevel = "h3" }) {
         <span className="font-mono text-xs text-subtle">{project.role}</span>
       </div>
       <Heading className="text-lg font-semibold tracking-tight">
-        <Link href={`/projects/${project.slug}/`} className="after:absolute after:inset-0 after:rounded-2xl">
+        <Link href={localePath(locale, `/projects/${project.slug}/`)} className="after:absolute after:inset-0 after:rounded-2xl">
           {project.title}
         </Link>
       </Heading>
@@ -28,7 +31,7 @@ export function ProjectCard({ project, headingLevel = "h3" }) {
         {project.stack.slice(0, 5).join(" · ")}
       </p>
       <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent">
-        Read case study
+        {ui.project.readCase}
         <ArrowUpRight aria-hidden="true" className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
       </span>
     </article>

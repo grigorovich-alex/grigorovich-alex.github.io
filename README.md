@@ -4,7 +4,7 @@
 
 I design, build and scale modern web products — from product architecture and technical strategy to production infrastructure and delivery.
 
-🌐 **Portfolio:** [grigorovich-alex.github.io](https://grigorovich-alex.github.io) · 📄 **CV:** [/cv](https://grigorovich-alex.github.io/cv/)
+🌐 **Portfolio:** [grigorovich-alex.github.io](https://grigorovich-alex.github.io) · 📄 **CV:** [/cv](https://grigorovich-alex.github.io/cv/) · 🇷🇺 **По-русски:** [/ru](https://grigorovich-alex.github.io/ru/)
 
 ---
 
@@ -97,13 +97,20 @@ pnpm start   # only for non-export hosting; for Pages, serve ./out
 ### Structure
 
 ```
-app/          routes, metadata, sitemap, robots, /og.png
-components/   layout · navigation · sections · projects · architecture · ui
-content/      all texts and data: site, skills, projects, experience, principles, architecture
-lib/          metadata and JSON-LD helpers
+app/(en)/      English routes at the site root
+app/(ru)/ru/   Russian routes under /ru/ (own root layout, lang="ru")
+app/           shared: global 404, sitemap, robots, /og.png
+components/    views (one per page, take `locale`) · layout · navigation · sections · projects · architecture · ui
+content/en/    English texts and data: site, skills, projects, experience, principles, architecture, ui
+content/ru/    Russian texts — same shape as content/en
+lib/           i18n paths, metadata (canonical + hreflang), JSON-LD, fonts
 ```
 
-Content is separated from UI: edit `content/*.js` to change texts. Fields still to be filled are listed in [CONTENT_TODO.md](CONTENT_TODO.md).
+Content is separated from UI: edit `content/<locale>/*.js` to change texts, and keep both languages in sync. Route files are thin wrappers around `components/views/*`. Fields still to be filled are listed in [CONTENT_TODO.md](CONTENT_TODO.md).
+
+### Languages
+
+English is served at `/`, Russian at `/ru/`. The header switch links to the same page in the other language; every page declares `hreflang` alternates and the sitemap lists both versions. To add a language, add `content/<locale>/`, register it in `content/index.js` and `content/shared.js`, and add an `app/(<locale>)/<locale>/` route group.
 
 ### Hosting elsewhere
 

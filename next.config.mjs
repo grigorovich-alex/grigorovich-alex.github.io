@@ -5,6 +5,8 @@ const nextConfig = {
   // /experience → /experience/index.html, which GitHub Pages serves without redirects.
   trailingSlash: true,
   images: { unoptimized: true },
+  // Two root layouts (en at /, ru at /ru/) need one 404 page shared by both.
+  experimental: { globalNotFound: true },
 };
 
 export default nextConfig;

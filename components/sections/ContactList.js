@@ -1,10 +1,11 @@
 import { Mail, Send } from "lucide-react";
 import { GithubMark } from "@/components/icons/GithubMark";
-import { contacts } from "@/content/site";
+import { getContent } from "@/content";
 
 const icons = { email: Mail, telegram: Send, github: GithubMark };
 
-export function ContactList() {
+export function ContactList({ locale }) {
+  const { contacts } = getContent(locale);
   return (
     <ul className="grid gap-3 sm:grid-cols-3">
       {contacts.map((c) => {

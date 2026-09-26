@@ -1,6 +1,6 @@
 # Content TODO
 
-Everything the site does **not** claim yet because the fact hasn't been confirmed. Fill a field in `content/*.js` and remove it from this list — never replace a TODO with a guess.
+Everything the site does **not** claim yet because the fact hasn't been confirmed. Fill a field in **both** `content/en/*.js` and `content/ru/*.js` and remove it from this list — never replace a TODO with a guess.
 
 ## Personal
 
@@ -11,7 +11,7 @@ Everything the site does **not** claim yet because the fact hasn't been confirme
 - [ ] Location / time zone / relocation & remote preferences
 - [ ] Photo (optional)
 
-## Experience (`content/experience.js`)
+## Experience (`content/<locale>/experience.js`)
 
 - [ ] Marketplace project: dates
 - [ ] Earlier roles: companies, dates, exact titles
@@ -20,7 +20,7 @@ Everything the site does **not** claim yet because the fact hasn't been confirme
 - [ ] Measurable results (only numbers you can back up)
 - [ ] Total years of experience (the site deliberately doesn't state it)
 
-## Projects (`content/projects.js`)
+## Projects (`content/<locale>/projects.js`)
 
 ### Diamitry
 - [ ] Permission / wording for business metrics (orders per month, clients, revenue — currently not shown)

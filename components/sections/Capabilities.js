@@ -1,14 +1,16 @@
-import { capabilities } from "@/content/skills";
+import { getContent } from "@/content";
 import { Section } from "@/components/ui/Section";
 import { Icon } from "@/components/ui/Icon";
 
-export function Capabilities() {
+export function Capabilities({ locale }) {
+  const { capabilities, ui } = getContent(locale);
+  const t = ui.home.capabilities;
   return (
     <Section
       id="capabilities"
-      eyebrow="Capabilities"
-      title="From architecture to production"
-      description="Four areas I own on a project — usually all at once."
+      eyebrow={t.eyebrow}
+      title={t.title}
+      description={t.description}
       className="border-t border-border"
     >
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

@@ -1,11 +1,11 @@
-import { site } from "@/content/site";
+import { SITE_URL } from "@/content";
 
 export const dynamic = "force-static";
 
 export default function robots() {
   return {
     rules: { userAgent: "*", allow: "/" },
-    sitemap: `${site.url}/sitemap.xml`,
-    host: site.url,
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }

@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
-import { site } from "@/content/site";
-import { heroStack } from "@/content/skills";
+import { getContent } from "@/content";
+
+const { site, heroStack } = getContent("en");
 
 export const dynamic = "force-static";
 

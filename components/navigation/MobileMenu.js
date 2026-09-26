@@ -4,10 +4,9 @@ import { useEffect, useId, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { navigation } from "@/content/site";
 import { isActive } from "./NavLinks";
 
-export function MobileMenu() {
+export function MobileMenu({ items, cv, labels }) {
   const pathname = usePathname();
   // Remember where the menu was opened: navigating elsewhere closes it without an effect.
   const [openedAt, setOpenedAt] = useState(null);
@@ -24,12 +23,12 @@ export function MobileMenu() {
   }, [open]);
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <button
         type="button"
         aria-expanded={open}
         aria-controls={panelId}
-        aria-label={open ? "Close menu" : "Open menu"}
+        aria-label={open ? labels.closeMenu : labels.openMenu}
         onClick={() => setOpen(!open)}
         className="inline-flex size-10 items-center justify-center rounded-lg text-fg hover:bg-surface"
       >
@@ -38,11 +37,11 @@ export function MobileMenu() {
       {open && (
         <nav
           id={panelId}
-          aria-label="Mobile"
+          aria-label={labels.mobileNav}
           className="absolute inset-x-0 top-full border-b border-border bg-bg px-4 pb-6 pt-2 shadow-sm"
         >
           <ul className="flex flex-col">
-            {navigation.map((item) => {
+            {items.map((item) => {
               const active = isActive(pathname, item.href);
               return (
                 <li key={item.href}>
@@ -57,8 +56,8 @@ export function MobileMenu() {
               );
             })}
             <li className="mt-3">
-              <Link href="/cv/" className="block rounded-lg bg-fg px-3 py-3 text-center text-base font-medium text-bg">
-                CV
+              <Link href={cv.href} className="block rounded-lg bg-fg px-3 py-3 text-center text-base font-medium text-bg">
+                {cv.label}
               </Link>
             </li>
           </ul>

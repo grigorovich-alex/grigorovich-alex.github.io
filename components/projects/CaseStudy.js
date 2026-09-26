@@ -1,18 +1,20 @@
 import { FlowDiagram } from "@/components/architecture/FlowDiagram";
 
-// The 11 sections every case study follows.
-export const caseSections = [
-  { id: "overview", title: "Overview" },
-  { id: "problem", title: "Problem" },
-  { id: "constraints", title: "Constraints" },
-  { id: "architecture", title: "Architecture" },
-  { id: "decisions", title: "Technical decisions" },
-  { id: "data-model", title: "Data model" },
-  { id: "performance", title: "Performance" },
-  { id: "security", title: "Security" },
-  { id: "deployment", title: "Deployment" },
-  { id: "challenges", title: "Challenges" },
-  { id: "improvements", title: "What I would improve" },
+import { getContent } from "@/content";
+
+// The 11 sections every case study follows (titles come from the locale's ui dictionary).
+export const caseSectionIds = [
+  "overview",
+  "problem",
+  "constraints",
+  "architecture",
+  "decisions",
+  "data-model",
+  "performance",
+  "security",
+  "deployment",
+  "challenges",
+  "improvements",
 ];
 
 function Bullets({ items }) {
@@ -40,7 +42,9 @@ function Block({ id, index, title, children }) {
   );
 }
 
-export function CaseStudy({ project: p }) {
+export function CaseStudy({ project: p, locale }) {
+  const t = getContent(locale).ui.project;
+  const caseSections = caseSectionIds.map((id) => ({ id, title: t.sections[id] }));
   const content = {
     overview: <p className="leading-7">{p.overview}</p>,
     problem: <p className="leading-7">{p.problem}</p>,
@@ -86,7 +90,7 @@ export function CaseStudy({ project: p }) {
 
   return (
     <div className="grid gap-10 lg:grid-cols-[12rem_minmax(0,1fr)]">
-      <nav aria-label="Case study sections" className="hidden lg:block">
+      <nav aria-label={t.sectionsNav} className="hidden lg:block">
         <ol className="sticky top-24 space-y-1.5 text-sm">
           {caseSections.map((s) => (
             <li key={s.id}>

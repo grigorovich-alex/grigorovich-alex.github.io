@@ -1,25 +1,17 @@
 // Abstract request path through a typical stack. Pure SVG + CSS animation;
 // fixed viewBox keeps its box stable (no layout shift), motion stops under prefers-reduced-motion.
 
-const layers = [
-  { label: "Browser", sub: "PWA · SSR HTML" },
-  { label: "Next.js", sub: "App Router · RSC" },
-  { label: "Business logic", sub: "Payload hooks · access" },
-  { label: "MongoDB", sub: "collections · indexes" },
-  { label: "Infrastructure", sub: "Docker · Nginx · CI/CD" },
-];
-
 const W = 320;
 const BOX_H = 52;
 const GAP = 26;
-const H = layers.length * BOX_H + (layers.length - 1) * GAP;
 
-export function HeroDiagram() {
+export function HeroDiagram({ label, layers }) {
+  const H = layers.length * BOX_H + (layers.length - 1) * GAP;
   return (
     <svg
       viewBox={`0 0 ${W} ${H}`}
       role="img"
-      aria-label="Architecture layers: Browser, Next.js, business logic, MongoDB, infrastructure"
+      aria-label={label}
       className="h-auto w-full max-w-[320px]"
     >
       {layers.map((layer, i) => {
